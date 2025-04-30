@@ -96,6 +96,7 @@ jobs:
       - name: Setup SSH
         run: |
           echo "Secrets:"
+          echo ${{ secrets.SERVER_IP }}"
           echo "SERVER_IP: ${{ secrets.SERVER_IP != '' && 'SET' || 'NOT SET' }}"
           echo "REMOTE_PATH: ${{ secrets.REMOTE_PATH != '' && 'SET' || 'NOT SET' }}"
           
