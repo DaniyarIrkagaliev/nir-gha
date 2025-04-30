@@ -97,8 +97,8 @@ jobs:
         run: |
           echo "Secrets:"
           echo ${{ secrets.SERVER_IP }}"
-          echo "SERVER_IP: ${{ secrets.SERVER_IP != '' && 'SET' || 'NOT SET' }}"
-          echo "REMOTE_PATH: ${{ secrets.REMOTE_PATH != '' && 'SET' || 'NOT SET' }}"
+          echo "SERVER_IP: ${{ secrets.SSH_PRIVATE_KEY.SERVER_IP != '' && 'SET' || 'NOT SET' }}"
+          echo "REMOTE_PATH: ${{ secrets.SSH_PRIVATE_KEY.REMOTE_PATH != '' && 'SET' || 'NOT SET' }}"
           
           sudo apt-get update -qq && sudo apt-get install -qq openssh-client
            
