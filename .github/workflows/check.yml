@@ -87,7 +87,11 @@ jobs:
           fi
           echo "Files to deploy:"
           ls -la dist/
-  
+      - name: Debug info
+        run: |
+          echo "Secrets:"
+          echo "SERVER_IP: ${{ secrets.SERVER_IP != '' && 'SET' || 'NOT SET' }}"
+          echo "REMOTE_PATH: ${{ secrets.REMOTE_PATH != '' && 'SET' || 'NOT SET' }}"
       - name: Setup SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
